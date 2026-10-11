@@ -10,33 +10,141 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AccountsRouteImport } from './routes/accounts'
+import { Route as ApprovalsRouteImport } from './routes/approvals'
+import { Route as AuditRouteImport } from './routes/audit'
+import { Route as ImportJournalsRouteImport } from './routes/import-journals'
+import { Route as JournalsRouteImport } from './routes/journals'
+import { Route as NewJournalRouteImport } from './routes/new-journal'
+import { Route as ReportsRouteImport } from './routes/reports'
+import { Route as UsersRouteImport } from './routes/users'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AccountsRoute = AccountsRouteImport.update({
+  id: '/accounts',
+  path: '/accounts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApprovalsRoute = ApprovalsRouteImport.update({
+  id: '/approvals',
+  path: '/approvals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuditRoute = AuditRouteImport.update({
+  id: '/audit',
+  path: '/audit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImportJournalsRoute = ImportJournalsRouteImport.update({
+  id: '/import-journals',
+  path: '/import-journals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JournalsRoute = JournalsRouteImport.update({
+  id: '/journals',
+  path: '/journals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewJournalRoute = NewJournalRouteImport.update({
+  id: '/new-journal',
+  path: '/new-journal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportsRoute = ReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UsersRoute = UsersRouteImport.update({
+  id: '/users',
+  path: '/users',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/accounts': typeof AccountsRoute
+  '/approvals': typeof ApprovalsRoute
+  '/audit': typeof AuditRoute
+  '/import-journals': typeof ImportJournalsRoute
+  '/journals': typeof JournalsRoute
+  '/new-journal': typeof NewJournalRoute
+  '/reports': typeof ReportsRoute
+  '/users': typeof UsersRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/accounts': typeof AccountsRoute
+  '/approvals': typeof ApprovalsRoute
+  '/audit': typeof AuditRoute
+  '/import-journals': typeof ImportJournalsRoute
+  '/journals': typeof JournalsRoute
+  '/new-journal': typeof NewJournalRoute
+  '/reports': typeof ReportsRoute
+  '/users': typeof UsersRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/accounts': typeof AccountsRoute
+  '/approvals': typeof ApprovalsRoute
+  '/audit': typeof AuditRoute
+  '/import-journals': typeof ImportJournalsRoute
+  '/journals': typeof JournalsRoute
+  '/new-journal': typeof NewJournalRoute
+  '/reports': typeof ReportsRoute
+  '/users': typeof UsersRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/accounts'
+    | '/approvals'
+    | '/audit'
+    | '/import-journals'
+    | '/journals'
+    | '/new-journal'
+    | '/reports'
+    | '/users'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/accounts'
+    | '/approvals'
+    | '/audit'
+    | '/import-journals'
+    | '/journals'
+    | '/new-journal'
+    | '/reports'
+    | '/users'
+  id:
+    | '__root__'
+    | '/'
+    | '/accounts'
+    | '/approvals'
+    | '/audit'
+    | '/import-journals'
+    | '/journals'
+    | '/new-journal'
+    | '/reports'
+    | '/users'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AccountsRoute: typeof AccountsRoute
+  ApprovalsRoute: typeof ApprovalsRoute
+  AuditRoute: typeof AuditRoute
+  ImportJournalsRoute: typeof ImportJournalsRoute
+  JournalsRoute: typeof JournalsRoute
+  NewJournalRoute: typeof NewJournalRoute
+  ReportsRoute: typeof ReportsRoute
+  UsersRoute: typeof UsersRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +156,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/accounts': {
+      id: '/accounts'
+      path: '/accounts'
+      fullPath: '/accounts'
+      preLoaderRoute: typeof AccountsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/approvals': {
+      id: '/approvals'
+      path: '/approvals'
+      fullPath: '/approvals'
+      preLoaderRoute: typeof ApprovalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/audit': {
+      id: '/audit'
+      path: '/audit'
+      fullPath: '/audit'
+      preLoaderRoute: typeof AuditRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/import-journals': {
+      id: '/import-journals'
+      path: '/import-journals'
+      fullPath: '/import-journals'
+      preLoaderRoute: typeof ImportJournalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/journals': {
+      id: '/journals'
+      path: '/journals'
+      fullPath: '/journals'
+      preLoaderRoute: typeof JournalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/new-journal': {
+      id: '/new-journal'
+      path: '/new-journal'
+      fullPath: '/new-journal'
+      preLoaderRoute: typeof NewJournalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reports': {
+      id: '/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof ReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/users': {
+      id: '/users'
+      path: '/users'
+      fullPath: '/users'
+      preLoaderRoute: typeof UsersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AccountsRoute: AccountsRoute,
+  ApprovalsRoute: ApprovalsRoute,
+  AuditRoute: AuditRoute,
+  ImportJournalsRoute: ImportJournalsRoute,
+  JournalsRoute: JournalsRoute,
+  NewJournalRoute: NewJournalRoute,
+  ReportsRoute: ReportsRoute,
+  UsersRoute: UsersRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
